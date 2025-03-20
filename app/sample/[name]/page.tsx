@@ -3,7 +3,7 @@ export async function generateStaticParams() {
   const data = (await res.json()) as { name: string }[];
 
   return data.map((item) => ({
-    name: item.name,
+    name: item,
   }));
 }
 
@@ -19,7 +19,7 @@ export default async function Sample({
 
   return (
     <div>
-      {name}
+      {JSON.stringify(name)}
       {/* <p className="text-5xl">{formattedData.length}</p> */}
       {/**/}
       {/* {formattedData.map((item: string) => ( */}
