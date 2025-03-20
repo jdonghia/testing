@@ -1,7 +1,7 @@
-export default function Home() {
-  return (
-    <main>
-      <div>Hello world!</div>
-    </main>
-  );
+
+
+
+export default async function Home() {
+  console.log("hello world from home")
+  return <main></main>;
 }
