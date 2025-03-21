@@ -1,3 +1,5 @@
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon");
   const data = (await res.json()).results as { name: string }[];
@@ -14,9 +16,7 @@ export default async function Sample({
 }) {
   const { name } = await params;
 
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
-    cache: "force-cache",
-  });
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
   const data = (await res.json()).abilities as { name: string }[];
 
